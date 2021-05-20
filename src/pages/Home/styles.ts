@@ -9,6 +9,7 @@ export const SectionBanner = styled.section`
   background-size: 54%;
   background-position: 100% 0;
   background-repeat: no-repeat;
+  height: 100vh;
 
   .search {
     display: flex;
@@ -40,6 +41,20 @@ export const SectionBanner = styled.section`
       margin-left: 20px;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    background-size: 75%;
+
+    .searchContent {
+      margin-left: 0.2rem;
+      input {
+        width: 250px;
+      }
+      button {
+        margin-left: 10px;
+      }
+    }
+  }
 `;
 
 export const BestRecipes = styled.section`
@@ -63,6 +78,16 @@ export const BestRecipes = styled.section`
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     text-align: start;
+  }
+
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+    .cardsRecipes {
+      display: flex;
+      flex-direction: column;
+    }
   }
 `;
 
@@ -100,6 +125,20 @@ export const BestSevices = styled.section`
       box-shadow: 2px 2px 10px #badc58;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    padding-right: 3rem;
+    .blogContent {
+      width: 50%;
+      p {
+        font-size: 0.9rem;
+      }
+      button {
+        padding: 0.2rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
 `;
 
 export const Blog = styled.section`
@@ -126,6 +165,13 @@ export const Blog = styled.section`
   .cardsBlog {
     display: flex;
     margin-top: 2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .cardsBlog {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
   }
 `;
 export const MenberShip = styled.section`
@@ -170,6 +216,18 @@ export const MenberShip = styled.section`
       margin-left: 20px;
       color: #ffffff;
       box-shadow: 2px 2px 10px #badc58;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .joinMember {
+      h1 {
+        font-size: 1.7rem;
+      }
+    }
+    .searchContent {
+      input {
+        width: 220px;
+      }
     }
   }
 `;

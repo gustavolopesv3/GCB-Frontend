@@ -10,7 +10,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
 }
 html{
-    
+
 }
 body{
     font: 400 14px Roboto, sans-serif;
