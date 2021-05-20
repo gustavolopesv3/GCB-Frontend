@@ -55,6 +55,28 @@ export const SectionBanner = styled.section`
       }
     }
   }
+
+  @media screen and (max-width: 425px) {
+    background-size: 50%;
+    height: 100%;
+    .search {
+      width: 50%;
+      h1 {
+        font-size: 2rem;
+      }
+      .searchContent {
+        margin-left: 0.2rem;
+        input {
+          width: 150px;
+          font-size: 0.7rem;
+        }
+        button {
+          margin-left: 10px;
+          padding: 0.2rem;
+        }
+      }
+    }
+  }
 `;
 
 export const BestRecipes = styled.section`
@@ -227,6 +249,21 @@ export const MenberShip = styled.section`
     .searchContent {
       input {
         width: 220px;
+      }
+    }
+  }
+  @media screen and (max-width: 425px) {
+    .joinMember {
+      h1 {
+        margin-left: 30px;
+        font-size: 1.1rem;
+      }
+    }
+    .searchContent {
+      input {
+        margin-left: 40px;
+        width: 150px;
+        font-size: 0.7rem;
       }
     }
   }

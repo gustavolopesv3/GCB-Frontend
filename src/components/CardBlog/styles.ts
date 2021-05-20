@@ -27,4 +27,10 @@ export const Card = styled.div`
       font-size: 1rem;
     }
   }
+  @media screen and (max-width: 425px) {
+    width: 180px;
+    h3 {
+      font-size: 1rem;
+    }
+  }
 `;

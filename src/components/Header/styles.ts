@@ -35,6 +35,5 @@ export const Nav = styled.nav`
     }
   }
   @media only screen and (max-width: 767px) {
-    display: none;
   }
 `;
