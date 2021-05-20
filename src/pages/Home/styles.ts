@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import illustration from '../../assets/Illustration.svg';
 import sevicesIlustation from '../../assets/bloco_services.svg'
+import menbershipImage from '../../assets/bloco_final_image.svg'
 
 
 
@@ -77,11 +78,8 @@ span{
 export const BestSevices = styled.section`
 height: 100vh;
 background-image: url(${sevicesIlustation});
-
 background-size: 54%;
-
 background-repeat: no-repeat;
-
 display: flex;
 flex-direction: row-reverse;
 padding-right: 10rem ;
@@ -138,6 +136,70 @@ justify-content: center;
 .cardsBlog{
   display: flex;
   margin-top: 2rem;
+}
+
+`
+export const MenberShip = styled.section`
+height: 100vh;
+background-image: url(${menbershipImage});
+background-size: 54%;
+background-position: 100% 0;
+background-repeat: no-repeat;
+
+display: flex;
+align-items: center;
+
+.joinMember{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: 40%;
+  margin-top: 7rem;
+  h1{
+    font-size: 3rem;   
+    color : #1D164D;
+  }
+}
+.searchContent {
+  margin-top: 1rem;
+  margin-left: 3rem;
+  display: flex;
+
+
+  
+  input{
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 6px;
+    width: 300px;
+    
+  }
+
+  button{
+    background-color: #badc58;
+    border: none;
+
+    padding: 9px 20px 9px 20px;
+    border-radius: 5px;
+    margin-left: 20px;
+    color: #ffffff;
+    box-shadow: 2px 2px 10px #badc58;
+
+  }
+}
+`
+
+export const Footer = styled.footer`
+display: flex;
+justify-content: space-between;
+padding: 3rem;
+h3{
+  color: #1D164D;
+}
+span{
+  color: #9E9BAF;
+  margin-left: 1rem;
 }
 
 `

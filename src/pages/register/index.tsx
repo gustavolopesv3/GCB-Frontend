@@ -3,6 +3,7 @@ import {useCookies} from 'react-cookie'
 import axios from 'axios'
 import { ButtonSubmit, Container, SectionRegister } from "./styles"
 import { Header } from "../../components/Header"
+import { FooterPage } from "../../components/Footer"
 
 interface cepData {
   data: {
@@ -111,6 +112,7 @@ export const Register = ()=>{
       </form>
     </Container>
     </SectionRegister>
+    <FooterPage/>
     </>
   )
 }

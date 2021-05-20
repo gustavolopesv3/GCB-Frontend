@@ -1,5 +1,5 @@
 import { Header } from "../../components/Header"
-import {BestRecipes, BestSevices, SectionBanner, Blog} from './styles'
+import {BestRecipes, BestSevices, SectionBanner, Blog, MenberShip} from './styles'
 import {FiSearch} from 'react-icons/fi'
 import { CardRecipe } from "../../components/CardRecipe"
 
@@ -18,6 +18,7 @@ import author2 from '../../assets/author2.svg';
 import author3 from '../../assets/author3.svg';
 import author4 from '../../assets/author4.svg';
 import { CardBlog } from "../../components/CardBlog";
+import { FooterPage } from "../../components/Footer";
 
 
 export const Home = ()=>{
@@ -80,6 +81,19 @@ export const Home = ()=>{
         </div>
 
     </Blog>
+    
+    <MenberShip>
+    <div className='joinMember'>
+      <h1>Join our membership <br />
+          to get special offer</h1>
+
+      <div className='searchContent'>
+        <input type="text" placeholder='Enter yout email address' /> 
+        <button>join</button>
+      </div>
+    </div>
+    </MenberShip>
+    <FooterPage/>
     </>
   )
 }
