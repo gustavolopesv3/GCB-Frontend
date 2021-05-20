@@ -2,6 +2,10 @@
 import { useCallback, useState } from 'react';
 import axios from 'axios';
 import { ButtonSubmit, Container, SectionRegister } from './styles';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+
 import { Header } from '../../components/Header';
 import { FooterPage } from '../../components/Footer';
 
@@ -15,7 +19,25 @@ interface cepData {
   };
 }
 
+interface dataSaveProps {
+  data: {
+    nomeCompleto: string;
+  };
+}
+
+const scremaForm = yup.object().shape({
+  nomeCompleto: yup.string(),
+});
+
 export const Register = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm({
+    resolver: yupResolver(scremaForm),
+  });
+
   const [pessoa, setPessoa] = useState({
     nomeCompleto: '',
     dataNascimento: '',
@@ -37,6 +59,10 @@ export const Register = () => {
       ...prevState,
       [name]: value,
     }));
+  };
+
+  const dataSave: SubmitHandler<dataSaveProps> = (data) => {
+    console.log(data);
   };
 
   const saveData = (e: React.FormEvent<HTMLElement>) => {
@@ -86,7 +112,7 @@ export const Register = () => {
       <SectionRegister>
         <Header />
         <Container>
-          <form onSubmit={saveData}>
+          <form onSubmit={handleSubmit(dataSave)}>
             <input
               type="text"
               name="nomeCompleto"
@@ -94,6 +120,7 @@ export const Register = () => {
               onChange={onChangeForm}
               value={pessoa.nomeCompleto}
             />
+            <p>{errors.nomeCompleto?.message}</p>
             <input
               type="text"
               name="dataNascimento"

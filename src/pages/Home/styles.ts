@@ -121,6 +121,7 @@ export const BestSevices = styled.section`
   display: flex;
   flex-direction: row-reverse;
   padding-right: 10rem;
+  height: 100vh;
 
   .blogContent {
     width: 35%;
@@ -150,6 +151,7 @@ export const BestSevices = styled.section`
   }
 
   @media screen and (max-width: 768px) {
+    height: 100%;
     padding-right: 3rem;
     .blogContent {
       width: 50%;

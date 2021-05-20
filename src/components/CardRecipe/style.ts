@@ -33,4 +33,37 @@ export const Card = styled.div`
       color: #ffffff;
     }
   }
+  @media screen and (max-width: 425px) {
+    height: 100px;
+    .cardContent {
+      h2 {
+        font-size: 1rem;
+      }
+    }
+    button {
+      background-color: #badc58;
+      border: none;
+      border-radius: 5px;
+      padding: 1px;
+      color: #ffffff;
+      font-size: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    height: 100px;
+    .cardContent {
+      h2 {
+        font-size: 0.8rem;
+      }
+    }
+    button {
+      background-color: #badc58;
+      border: none;
+      border-radius: 5px;
+      padding: 1px;
+      color: #ffffff;
+      font-size: 0.7rem;
+    }
+  }
 `;
