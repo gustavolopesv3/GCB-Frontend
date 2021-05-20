@@ -57,12 +57,13 @@ export const SectionBanner = styled.section`
   }
 
   @media screen and (max-width: 425px) {
-    background-size: 50%;
     height: 100%;
     .search {
       width: 50%;
+      margin-top: -20px;
       h1 {
-        font-size: 2rem;
+        font-size: 1.3rem;
+        margin-left: -50px;
       }
       .searchContent {
         margin-left: 0.2rem;
@@ -161,6 +162,24 @@ export const BestSevices = styled.section`
       }
     }
   }
+
+  @media screen and (max-width: 425px) {
+    padding-right: 3rem;
+    .blogContent {
+      width: 50%;
+      h1 {
+        font-size: 1rem;
+      }
+      p {
+        font-size: 0.5rem;
+        margin-top: 0.5rem;
+      }
+      button {
+        padding: 0.2rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
 `;
 
 export const Blog = styled.section`
@@ -201,6 +220,7 @@ export const MenberShip = styled.section`
   background-size: 54%;
   background-position: 100% 0;
   background-repeat: no-repeat;
+  height: 100vh;
 
   display: flex;
   align-items: center;
@@ -241,6 +261,7 @@ export const MenberShip = styled.section`
     }
   }
   @media screen and (max-width: 768px) {
+    height: 100%;
     .joinMember {
       h1 {
         font-size: 1.7rem;
@@ -253,6 +274,7 @@ export const MenberShip = styled.section`
     }
   }
   @media screen and (max-width: 425px) {
+    height: 100%;
     .joinMember {
       h1 {
         margin-left: 30px;

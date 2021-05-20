@@ -28,7 +28,7 @@ export const Card = styled.div`
     }
   }
   @media screen and (max-width: 425px) {
-    width: 180px;
+    width: 150px;
     h3 {
       font-size: 1rem;
     }
