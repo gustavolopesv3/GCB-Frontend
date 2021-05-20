@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import illustration from '../../assets/Illustration.svg';
+import sevicesIlustation from '../../assets/bloco_services.svg'
 
 
 export const SectionBanner = styled.section`
@@ -69,4 +70,45 @@ span{
 }
 
 
+`
+
+
+export const BestSevices = styled.section`
+height: 100vh;
+background-image: url(${sevicesIlustation});
+
+background-size: 54%;
+
+background-repeat: no-repeat;
+
+display: flex;
+flex-direction: row-reverse;
+padding-right: 10rem ;
+
+.blogContent{
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+h1{
+  color: #1D164D;
+  font-size: 2rem;
+}
+p{
+  margin-top: 1.5rem;
+  color: #9E9BAF;
+  font-size: 1.2rem;
+}
+button{
+    background-color: #badc58;
+    border: none;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    color: #ffffff;
+    width: 120px;
+    box-shadow: 2px 2px 10px #badc58;
+  }
+}
 `
