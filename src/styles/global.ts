@@ -21,7 +21,7 @@ button{
 }
 form input{
     width: 100%;
-    height: 60px;
+    height: 30px;
     color: #333;
     border: 1px solid #dcde;
     border-radius: 8px;

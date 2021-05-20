@@ -1,6 +1,8 @@
 import React, { useCallback, useState } from "react"
+import {useCookies} from 'react-cookie'
 import axios from 'axios'
-import { Container } from "./styles"
+import { ButtonSubmit, Container, SectionRegister } from "./styles"
+import { Header } from "../../components/Header"
 
 interface cepData {
   data: {
@@ -20,19 +22,13 @@ export const Register = ()=>{
     cpf: '',
   })
 
-  // const [endereco, setEndereco] = useState({
-  //   cep: '',
-  //   rua:'',
-  //   bairro: '',
-  //   cidade: '',
-  //   estado: '',
-  //   teste:'aaaa'
-  // })
   const [rua, setRua] = useState('')
   const [cep, setCep] = useState('')
   const [bairro, setBairro] = useState('')
   const [cidade, setCidade] = useState('')
   const [estado, setEstado] = useState('')
+
+
 
   const onChangeForm = (e:React.FormEvent<HTMLInputElement>) => {
     const name = e.currentTarget.name;
@@ -46,19 +42,10 @@ export const Register = ()=>{
     }));
   };
 
-  // const onChangeFormEndereco = (e:React.FormEvent<HTMLInputElement>) => {
-  //   const name = e.currentTarget.name;
-  //   const value = e.currentTarget.value;
-  //   console.log(e.currentTarget.value)
 
-  //   setEndereco((prevState) => ({
-  //     ...prevState,
-  //     [name]: value,
+    const saveData = (e:React.FormEvent<HTMLElement>) =>{
+      e.preventDefault()
       
-  //   }));
-  // };
-
-    const saveData = () =>{
       localStorage.setItem('GCB', JSON.stringify({
         pessoa,
         endereco:{
@@ -69,6 +56,15 @@ export const Register = ()=>{
           rua
         }
       }))
+      document.cookie = `GCB=${JSON.stringify({
+        pessoa,
+        endereco:{
+        cep,
+          cidade,
+          bairro,
+          estado,
+          rua
+      }})}`
     }
 
 
@@ -95,8 +91,12 @@ export const Register = ()=>{
 
 
 
-  return(
+  return(<>
+    <SectionRegister>
+    <Header/>
     <Container>
+      <form onSubmit={saveData}>
+
       <input type="text" name="nomeCompleto" placeholder='Nome completo' onChange={onChangeForm} value={pessoa.nomeCompleto} />
       <input type="text" name="dataNascimento" placeholder='Data de Nascimento' onChange={onChangeForm} value={pessoa.dataNascimento}/>
       <input type="text" name="cpf" placeholder='CPF' onChange={onChangeForm} value={pessoa.cpf}/>
@@ -107,8 +107,10 @@ export const Register = ()=>{
       <input type="text" name="bairro" placeholder='Bairro' onChange={e => setBairro(e.target.value)} value={bairro}/>
       <input type="text" name="cidade" placeholder='Cidade' onChange={e => setCidade(e.target.value)} value={cidade}/>
       <input type="text" name="estado" placeholder='Estado' onChange={e => setEstado(e.target.value)} value={estado}/>
-      
-      <button onClick={saveData}>Enviar</button>
+      <ButtonSubmit>Enviar</ButtonSubmit>
+      </form>
     </Container>
+    </SectionRegister>
+    </>
   )
 }
