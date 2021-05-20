@@ -3,6 +3,7 @@ import illustration from '../../assets/Illustration.svg';
 import sevicesIlustation from '../../assets/bloco_services.svg'
 
 
+
 export const SectionBanner = styled.section`
 height: 100vh;
 background-image: url(${illustration});
@@ -111,4 +112,32 @@ button{
     box-shadow: 2px 2px 10px #badc58;
   }
 }
+`
+
+export const Blog = styled.section`
+background-color: #FAFAFC;
+height: 100vh;
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+.titleBlog{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1{
+    color: #1D164D;
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+  }
+  p{
+    color: #9E9BAF;
+  }
+}
+
+.cardsBlog{
+  display: flex;
+  margin-top: 2rem;
+}
+
 `
