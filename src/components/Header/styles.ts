@@ -16,9 +16,7 @@ padding: 2rem;
 ul{
   display: flex;
   align-items: center;
-  a{
-    text-decoration: none;
-  }
+  
 
   li{
     margin-right: 2rem;

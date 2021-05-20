@@ -5,6 +5,7 @@ import illustration from '../../assets/Illustration.svg';
 export const SectionBanner = styled.section`
 height: 100vh;
 background-image: url(${illustration});
+
 background-size: 54%;
 background-position: 100% 0;
 background-repeat: no-repeat;
@@ -44,6 +45,28 @@ background-repeat: no-repeat;
 `
 
 export const BestRecipes = styled.section`
-background-color: antiquewhite;
+background-color: #FAFAFC;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+flex-direction: column;
+padding: 3rem;
+
+
+h1{
+  font-size: 3rem;
+}
+span{
+  color: #9E9BAF
+}
+.cardsRecipes{
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  text-align: start;
+}
+
 
 `
