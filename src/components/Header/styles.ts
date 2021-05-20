@@ -10,6 +10,7 @@ padding: 2rem;
 .logo{
   color: #badc58;
   font-size: 2rem;
+  margin-left: 6rem;
 }
 
 ul{
