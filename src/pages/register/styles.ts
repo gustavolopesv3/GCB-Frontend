@@ -3,7 +3,6 @@ import illustration from '../../assets/Illustration.svg';
 
 
 export const SectionRegister = styled.section`
-background-color: aliceblue;
 height: 100vh;
 background-image: url(${illustration});
 background-size: 54%;

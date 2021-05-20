@@ -42,3 +42,8 @@ background-repeat: no-repeat;
 }
 
 `
+
+export const BestRecipes = styled.section`
+background-color: antiquewhite;
+
+`
