@@ -23,6 +23,11 @@ import author3 from '../../assets/author3.svg';
 import blogImage4 from '../../assets/bloco_image_4.svg';
 import author4 from '../../assets/author4.svg';
 
+import comida1 from '../../assets/comida_1.svg';
+import comida2 from '../../assets/comida_2.svg';
+import comida3 from '../../assets/comida_3.svg';
+import comida4 from '../../assets/comida_4.svg';
+
 export const Home = () => {
   return (
     <>
@@ -54,10 +59,18 @@ export const Home = () => {
           </span>
         </div>
         <div className="cardsRecipes">
-          <CardRecipe />
-          <CardRecipe />
-          <CardRecipe />
-          <CardRecipe />
+          <CardRecipe
+            imageCard={comida1}
+            title="Broccoli Salad
+            with Bacon"
+          />
+          <CardRecipe
+            imageCard={comida2}
+            title="Classic Beef Burgers
+"
+          />
+          <CardRecipe imageCard={comida3} title="Classic Potato Salad" />
+          <CardRecipe imageCard={comida4} title="Cherry Cobbler on the Grill" />
         </div>
       </BestRecipes>
       <BestSevices>

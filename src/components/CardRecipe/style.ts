@@ -11,6 +11,7 @@ export const Card = styled.div`
 
   .cardContent {
     margin: 2rem;
+    width: 150px;
   }
   img {
     height: 100%;
