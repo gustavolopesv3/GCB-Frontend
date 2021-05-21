@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react';
 import axios from 'axios';
 import { ButtonSubmit, Container, SectionRegister } from './styles';
 import { Header } from '../../components/Header';
-import {validate} from 'gerador-validador-cpf'
+import { validate } from 'gerador-validador-cpf';
 interface cepData {
   data: {
     cep: string;
@@ -14,11 +14,7 @@ interface cepData {
   };
 }
 
-
-
 export const Register = () => {
-
-
   const [pessoa, setPessoa] = useState({
     nomeCompleto: '',
     dataNascimento: '',
@@ -42,14 +38,18 @@ export const Register = () => {
     }));
   };
 
-
   const saveData = (e: React.FormEvent<HTMLElement>) => {
     e.preventDefault();
-    const validaCpf = validate(pessoa.cpf)
-    if(validaCpf){
-      if(pessoa.nomeCompleto === "" || pessoa.dataNascimento === "" || pessoa.cpf === '' || cep === "" ){
-        alert('Preencha todos os campo')
-        return
+    const validaCpf = validate(pessoa.cpf);
+    if (validaCpf) {
+      if (
+        pessoa.nomeCompleto === '' ||
+        pessoa.dataNascimento === '' ||
+        pessoa.cpf === '' ||
+        cep === ''
+      ) {
+        alert('Preencha todos os campo');
+        return;
       }
       localStorage.setItem(
         'GCB',
@@ -74,14 +74,10 @@ export const Register = () => {
           rua,
         },
       })}`;
-      alert('dados salvos com sucesso!!')
-    }else{
-      alert('CPF Invalido!')
+      alert('dados salvos com sucesso!!');
+    } else {
+      alert('CPF Invalido!');
     }
-
-    
-       
-    
   };
 
   const handleLoadEndereco = useCallback(async (cep: string) => {
@@ -109,7 +105,7 @@ export const Register = () => {
               name="nomeCompleto"
               placeholder="Nome completo"
               onChange={onChangeForm}
-              value={pessoa.nomeCompleto}   
+              value={pessoa.nomeCompleto}
             />
             <input
               type="text"

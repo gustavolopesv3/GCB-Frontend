@@ -11,6 +11,18 @@ import { CardRecipe } from '../../components/CardRecipe';
 import { CardBlog } from '../../components/CardBlog';
 import { FooterPage } from '../../components/Footer';
 
+import blogImage1 from '../../assets/blog_image_1.svg';
+import author1 from '../../assets/author1.svg';
+
+import blogImage2 from '../../assets/bloco_image_2.svg';
+import author2 from '../../assets/author2.svg';
+
+import blogImage3 from '../../assets/bloco_image_3.svg';
+import author3 from '../../assets/author3.svg';
+
+import blogImage4 from '../../assets/bloco_image_4.svg';
+import author4 from '../../assets/author4.svg';
+
 export const Home = () => {
   return (
     <>
@@ -82,10 +94,34 @@ export const Home = () => {
           </p>
         </div>
         <div className="cardsBlog">
-          <CardBlog />
-          <CardBlog />
-          <CardBlog />
-          <CardBlog />
+          <CardBlog
+            image={blogImage1}
+            title="Quick-start guide
+            to nuts and seeds"
+            authorImg={author1}
+            author="Kevin Ibrahum"
+          />
+          <CardBlog
+            image={blogImage2}
+            title="Nutrition: Tips for
+            Improving Your Health
+            "
+            authorImg={author2}
+            author="Mike Jackson"
+          />
+          <CardBlog
+            image={blogImage3}
+            title="The top 10 benefits
+            of eating healthy"
+            authorImg={author3}
+            author="Bryan McGregor"
+          />
+          <CardBlog
+            image={blogImage4}
+            title="Quick-start guide to nuts and seeds"
+            authorImg={author4}
+            author="Jash Berson"
+          />
         </div>
       </Blog>
 
