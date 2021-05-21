@@ -2,13 +2,8 @@
 import { useCallback, useState } from 'react';
 import axios from 'axios';
 import { ButtonSubmit, Container, SectionRegister } from './styles';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import * as yup from 'yup';
-import { yupResolver } from '@hookform/resolvers/yup';
-
 import { Header } from '../../components/Header';
-import { FooterPage } from '../../components/Footer';
-
+import {validate} from 'gerador-validador-cpf'
 interface cepData {
   data: {
     cep: string;
@@ -19,24 +14,10 @@ interface cepData {
   };
 }
 
-interface dataSaveProps {
-  data: {
-    nomeCompleto: string;
-  };
-}
 
-const scremaForm = yup.object().shape({
-  nomeCompleto: yup.string(),
-});
 
 export const Register = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm({
-    resolver: yupResolver(scremaForm),
-  });
+
 
   const [pessoa, setPessoa] = useState({
     nomeCompleto: '',
@@ -61,16 +42,29 @@ export const Register = () => {
     }));
   };
 
-  const dataSave: SubmitHandler<dataSaveProps> = (data) => {
-    console.log(data);
-  };
 
   const saveData = (e: React.FormEvent<HTMLElement>) => {
     e.preventDefault();
-
-    localStorage.setItem(
-      'GCB',
-      JSON.stringify({
+    const validaCpf = validate(pessoa.cpf)
+    if(validaCpf){
+      if(pessoa.nomeCompleto === "" || pessoa.dataNascimento === "" || pessoa.cpf === '' || cep === "" ){
+        alert('Preencha todos os campo')
+        return
+      }
+      localStorage.setItem(
+        'GCB',
+        JSON.stringify({
+          pessoa,
+          endereco: {
+            cep,
+            cidade,
+            bairro,
+            estado,
+            rua,
+          },
+        })
+      );
+      document.cookie = `GCB=${JSON.stringify({
         pessoa,
         endereco: {
           cep,
@@ -79,18 +73,15 @@ export const Register = () => {
           estado,
           rua,
         },
-      })
-    );
-    document.cookie = `GCB=${JSON.stringify({
-      pessoa,
-      endereco: {
-        cep,
-        cidade,
-        bairro,
-        estado,
-        rua,
-      },
-    })}`;
+      })}`;
+      alert('dados salvos com sucesso!!')
+    }else{
+      alert('CPF Invalido!')
+    }
+
+    
+       
+    
   };
 
   const handleLoadEndereco = useCallback(async (cep: string) => {
@@ -112,15 +103,14 @@ export const Register = () => {
       <SectionRegister>
         <Header />
         <Container>
-          <form onSubmit={handleSubmit(dataSave)}>
+          <form onSubmit={saveData}>
             <input
               type="text"
               name="nomeCompleto"
               placeholder="Nome completo"
               onChange={onChangeForm}
-              value={pessoa.nomeCompleto}
+              value={pessoa.nomeCompleto}   
             />
-            <p>{errors.nomeCompleto?.message}</p>
             <input
               type="text"
               name="dataNascimento"
@@ -146,6 +136,7 @@ export const Register = () => {
             />
 
             <input
+              readOnly
               type="text"
               name="rua"
               placeholder="Endereço"
@@ -153,6 +144,7 @@ export const Register = () => {
               value={rua}
             />
             <input
+              readOnly
               type="text"
               name="bairro"
               placeholder="Bairro"
@@ -160,6 +152,7 @@ export const Register = () => {
               value={bairro}
             />
             <input
+              readOnly
               type="text"
               name="cidade"
               placeholder="Cidade"
@@ -167,6 +160,7 @@ export const Register = () => {
               value={cidade}
             />
             <input
+              readOnly
               type="text"
               name="estado"
               placeholder="Estado"
@@ -177,7 +171,6 @@ export const Register = () => {
           </form>
         </Container>
       </SectionRegister>
-      <FooterPage />
     </>
   );
 };
