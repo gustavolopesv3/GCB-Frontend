@@ -1,5 +1,5 @@
 //images
-import comida1 from '../../assets/comida_1.svg';
+
 import { Card } from './style';
 
 interface recipeProps {

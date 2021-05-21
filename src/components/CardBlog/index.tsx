@@ -1,7 +1,4 @@
 import { Card } from './styles';
-import image1 from '../../assets/blog_image_1.svg';
-
-import author1 from '../../assets/author1.svg';
 
 interface cardProps {
   image: string;
